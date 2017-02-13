@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from jira_importer.views import hello, current_datetime, hours_ahead, homepage
+from jira_importer.views import hello, current_datetime, hours_ahead, homepage, table, people
 
 
 """jira_importer URL Configuration
@@ -54,6 +54,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$', hello),
     url(r'^time/$', current_datetime),
+    url(r'^table/$', table),
+    url(r'^people/$', people),
     url(r'^time/plus/(\d{1,2})/$', hours_ahead),
 ]
 

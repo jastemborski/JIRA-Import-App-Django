@@ -31,16 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django-tables2',
-    'material',
-    'material.frontend',
-    'material.admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_utility', 
+    'django_tables2',
+    'jira_importer',
 ]
 
 MIDDLEWARE = [

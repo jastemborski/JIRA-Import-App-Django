@@ -2,6 +2,7 @@
 from django.template import Context"""
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
+from jira_importer.models import Person, SubTask
 import datetime
 
 """
@@ -29,9 +30,13 @@ results in a web page."""
 def hello(request):
     return HttpResponse("Hello World ya dig")
 
+def people(request):
+    return render(request, 'people.html', {'people': Person.objects.all()})
+
 
 def homepage(request):
     return HttpResponse("Yeah I'm sick like that")
+
 
 
 """ template loading, context creation, template rendering, and HttpResponse
@@ -45,6 +50,11 @@ def current_datetime(request):
     html = t.render(Context({'current_date': time}))
     return HttpResponse(html)
 """
+
+def table(request):
+    r = SubTask.objects.create(customer='hi', description='hi2', title='hi3', 
+        platform ='hi4', process = 'hi5')
+    return render(request, 'table.html', {'table': SubTask.objects.all()})
 
 
 def current_datetime(request):
